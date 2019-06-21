@@ -1,0 +1,20 @@
+#* * * * *  command to execute
+#│ │ │ │ │
+#│ │ │ │ └─── day of week (0 - 6) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+#│ │ │ └──────── month (1 - 12)
+#│ │ └───────────── day of month (1 - 31)
+#│ └────────────────── hour (0 - 23)
+#└─────────────────────── min (0 - 59)
+
+# Add explicit path to any folder and explicit path to any command including interpreter - i.e. don't use "./run.sh" but "sh run.sh"
+# make all R scripts etc executable
+
+####################################################################################################################################################################################################################################################################################
+#run archiver at 0100
+0 1 * * * cd /Users/ADD_USER/PATH/Archiver && sh ODK_Archiver.sh  >> /Users/chrissyhroberts/Documents/Archiver_Rwanda/Archiver_Rwanda.cron.log 2>&1 && /usr/local/bin/mutt -s "EDK0003 Archiver/Rwanda Reports" < report.txt -- chrissyhroberts@yahoo.co.uk
+#run EDK0003 analyser at 0130
+30 1 * * * cd ~/Documents/Analyser_Rwanda/ && /usr/local/bin/Rscript ~/Documents/Analyser_Rwanda/000_run_EDK0003_analysis.R
+####################################################################################################################################################################################################################################################################################
+
+
+
